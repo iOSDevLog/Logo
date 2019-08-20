@@ -19,7 +19,7 @@ class SimpleCalculatorTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testCalculator() {
         let calculator = SimpleCalculator()
         var script = "int a = b+3;"
         print("解析变量声明语句: \(script)")

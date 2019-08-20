@@ -31,6 +31,7 @@
 		8BF7500F230B833500632F35 /* ASTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7500E230B833500632F35 /* ASTNode.swift */; };
 		8BF75011230B83D200632F35 /* ASTNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF75010230B83D200632F35 /* ASTNodeType.swift */; };
 		8BF75013230B8AE700632F35 /* LogoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF75012230B8AE700632F35 /* LogoError.swift */; };
+		8BF75017230BA3B500632F35 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF75016230BA3B500632F35 /* CalculatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		8BF7500E230B833500632F35 /* ASTNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTNode.swift; sourceTree = "<group>"; };
 		8BF75010230B83D200632F35 /* ASTNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTNodeType.swift; sourceTree = "<group>"; };
 		8BF75012230B8AE700632F35 /* LogoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoError.swift; sourceTree = "<group>"; };
+		8BF75016230BA3B500632F35 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		8BB4925E230A54800045C41F /* Logo */ = {
 			isa = PBXGroup;
 			children = (
+				8BF75014230BA36500632F35 /* Calculator */,
 				8BB492BB230AB4780045C41F /* Main */,
 				8BB492B2230AA9BB0045C41F /* Lexer */,
 				8BB4925F230A54800045C41F /* AppDelegate.swift */,
@@ -255,6 +258,22 @@
 			isa = PBXGroup;
 			children = (
 				8BB49261230A54800045C41F /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8BF75014230BA36500632F35 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				8BF75015230BA37A00632F35 /* Controller */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		8BF75015230BA37A00632F35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8BF75016230BA3B500632F35 /* CalculatorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -438,6 +457,7 @@
 				8BB49260230A54800045C41F /* AppDelegate.swift in Sources */,
 				8BB492B8230AAB820045C41F /* Lexer.swift in Sources */,
 				8BB492BA230AABAF0045C41F /* LexerItem.swift in Sources */,
+				8BF75017230BA3B500632F35 /* CalculatorViewController.swift in Sources */,
 				8BB492B4230AA9CD0045C41F /* LexerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

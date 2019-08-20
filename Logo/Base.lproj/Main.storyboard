@@ -33,6 +33,26 @@
                                             <action selector="lexer:" destination="BYZ-38-t0r" id="paY-Mz-UZH"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="eA9-Gv-bQ7">
+                                        <connections>
+                                            <action selector="lexer:" destination="BYZ-38-t0r" id="kZ6-Af-vuw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Clear" id="4bM-nP-YGH">
+                                        <connections>
+                                            <action selector="clear:" destination="BYZ-38-t0r" id="h1P-ef-9gH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="9PH-gX-3QJ">
+                                        <connections>
+                                            <action selector="lexer:" destination="BYZ-38-t0r" id="Jyz-4b-0Vz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Calculator" id="egW-Ch-j8y">
+                                        <connections>
+                                            <action selector="calculator:" destination="BYZ-38-t0r" id="KFl-a1-AIx"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvb-NV-Zeg">
@@ -60,11 +80,49 @@
                     <connections>
                         <outlet property="editorTextView" destination="cur-wc-OnR" id="pSX-Lk-0zF"/>
                         <segue destination="Qt0-14-ydp" kind="show" identifier="lexerSegue" id="6yX-Wb-ZVK"/>
+                        <segue destination="ruJ-fI-QxX" kind="show" identifier="calculatorSegue" id="JAV-oj-lma"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1030" y="-536"/>
+        </scene>
+        <!--Calculator-->
+        <scene sceneID="AlK-aV-wWc">
+            <objects>
+                <tableViewController title="Calculator" id="ruJ-fI-QxX" customClass="CalculatorViewController" customModule="Logo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TqM-J7-n94">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="bki-RE-vvd" style="IBUITableViewCellStyleDefault" id="Cae-3q-cVI">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cae-3q-cVI" id="SRr-Ow-Nkp">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bki-RE-vvd">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ruJ-fI-QxX" id="74J-Yu-3em"/>
+                            <outlet property="delegate" destination="ruJ-fI-QxX" id="UOL-Kx-5dR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NHv-Ca-f63" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="169"/>
         </scene>
         <!--Lexer-->
         <scene sceneID="p1H-z9-yeo">
@@ -75,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="WDS-Gg-bCb" detailTextLabel="rIm-PQ-vYf" style="IBUITableViewCellStyleValue2" id="p8N-IQ-FTW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="WDS-Gg-bCb" detailTextLabel="CsO-5R-4EO" style="IBUITableViewCellStyleValue2" id="p8N-IQ-FTW">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p8N-IQ-FTW" id="J6u-gC-bew">
@@ -89,7 +147,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rIm-PQ-vYf">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CsO-5R-4EO">
                                             <rect key="frame" x="117" y="14" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>

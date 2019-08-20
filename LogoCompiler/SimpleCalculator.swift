@@ -17,11 +17,21 @@ import Foundation
  * 递归项在右边，会自然的对应右结合。我们真正需要的是左结合。
  */
 public class SimpleCalculator {
+    public var asts = [String]()
+    public var evaluates = [String]()
+    
+    public init() {
+        
+    }
+    
     /**
      * 执行脚本，并打印输出AST和求值过程。
      * @param script
      */
-    func evaluate(script: String) {
+    public func evaluate(script: String) {
+        self.asts.removeAll()
+        self.evaluates.removeAll()
+        
         do {
             if let tree = try parse(code: script) {
                 dumpAST(node: tree, indent: "")
@@ -57,7 +67,9 @@ public class SimpleCalculator {
      */
     func evaluate(node: ASTNode, indent: String) -> Int {
         var result = 0
-        print("\(indent) Calculating: \(String(describing: node.getType()!))")
+        let str = "\(indent) Calculating: \(String(describing: node.getType()!))"
+        print(str)
+        evaluates.append(str)
 
         if let type = node.getType() {
             switch type {
@@ -101,7 +113,9 @@ public class SimpleCalculator {
             }
         }
 
-        print("\(indent) Result: \(result)")
+        let resultStr = "\(indent) Result: \(result)"
+        print(resultStr)
+        evaluates.append(resultStr)
 
         return result;
     }
@@ -265,7 +279,9 @@ public class SimpleCalculator {
      * @param indent 缩进字符，由tab组成，每一级多一个tab
      */
     func dumpAST(node: ASTNode, indent: String) {
-        print("\(indent)\(String(describing: node.getType()!)) \(String(describing: node.getText()!))")
+        let str = "\(indent)\(String(describing: node.getType()!)) \(String(describing: node.getText()!))"
+        print(str)
+        asts.append(str)
         for child in node.getChildren() {
             dumpAST(node: child, indent: indent + "\t");
         }
