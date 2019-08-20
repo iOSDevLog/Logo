@@ -55,11 +55,6 @@ int result = a+b*c;
                 token = tokenReader?.read()
             }
             
-            if tokens.count > 0 {
-                let item = LexerItem(title: "\(section)", tokens: tokens)
-                lexer.lexerItems.append(item)
-            }
-            
             DispatchQueue.main.async {
                 self?.performSegue(withIdentifier: "lexerSegue", sender: lexer)
             }
