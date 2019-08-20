@@ -13,7 +13,7 @@
 		8BB49267230A548B0045C41F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB49266230A548B0045C41F /* Assets.xcassets */; };
 		8BB49275230A548B0045C41F /* LogoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB49274230A548B0045C41F /* LogoTests.swift */; };
 		8BB4928D230A54F70045C41F /* LogoCompiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB49284230A54F60045C41F /* LogoCompiler.framework */; };
-		8BB49294230A54F70045C41F /* LogoCompilerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB49293230A54F70045C41F /* LogoCompilerTests.swift */; };
+		8BB49294230A54F70045C41F /* SimpleCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB49293230A54F70045C41F /* SimpleCalculatorTests.swift */; };
 		8BB49296230A54F70045C41F /* LogoCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB49286230A54F60045C41F /* LogoCompiler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BB49299230A54F70045C41F /* LogoCompiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB49284230A54F60045C41F /* LogoCompiler.framework */; };
 		8BB4929A230A54F70045C41F /* LogoCompiler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB49284230A54F60045C41F /* LogoCompiler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -27,6 +27,10 @@
 		8BB492B4230AA9CD0045C41F /* LexerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB492B3230AA9CD0045C41F /* LexerViewController.swift */; };
 		8BB492B8230AAB820045C41F /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB492B7230AAB820045C41F /* Lexer.swift */; };
 		8BB492BA230AABAF0045C41F /* LexerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB492B9230AABAF0045C41F /* LexerItem.swift */; };
+		8BF7500D230B82BF00632F35 /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7500C230B82BF00632F35 /* SimpleCalculator.swift */; };
+		8BF7500F230B833500632F35 /* ASTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7500E230B833500632F35 /* ASTNode.swift */; };
+		8BF75011230B83D200632F35 /* ASTNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF75010230B83D200632F35 /* ASTNodeType.swift */; };
+		8BF75013230B8AE700632F35 /* LogoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF75012230B8AE700632F35 /* LogoError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +92,7 @@
 		8BB49286230A54F60045C41F /* LogoCompiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoCompiler.h; sourceTree = "<group>"; };
 		8BB49287230A54F60045C41F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB4928C230A54F60045C41F /* LogoCompilerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogoCompilerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BB49293230A54F70045C41F /* LogoCompilerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoCompilerTests.swift; sourceTree = "<group>"; };
+		8BB49293230A54F70045C41F /* SimpleCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorTests.swift; sourceTree = "<group>"; };
 		8BB49295230A54F70045C41F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB492A2230A553D0045C41F /* SimpleLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLexer.swift; sourceTree = "<group>"; };
 		8BB492A4230A55550045C41F /* SimpleLexerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLexerTests.swift; sourceTree = "<group>"; };
@@ -100,6 +104,10 @@
 		8BB492B3230AA9CD0045C41F /* LexerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexerViewController.swift; sourceTree = "<group>"; };
 		8BB492B7230AAB820045C41F /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		8BB492B9230AABAF0045C41F /* LexerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexerItem.swift; sourceTree = "<group>"; };
+		8BF7500C230B82BF00632F35 /* SimpleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculator.swift; sourceTree = "<group>"; };
+		8BF7500E230B833500632F35 /* ASTNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTNode.swift; sourceTree = "<group>"; };
+		8BF75010230B83D200632F35 /* ASTNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTNodeType.swift; sourceTree = "<group>"; };
+		8BF75012230B8AE700632F35 /* LogoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +199,10 @@
 				8BB492A8230A569B0045C41F /* Token.swift */,
 				8BB492AA230A56B90045C41F /* TokenType.swift */,
 				8BB492AC230A85230045C41F /* Character+Extension.swift */,
+				8BF7500C230B82BF00632F35 /* SimpleCalculator.swift */,
+				8BF7500E230B833500632F35 /* ASTNode.swift */,
+				8BF75010230B83D200632F35 /* ASTNodeType.swift */,
+				8BF75012230B8AE700632F35 /* LogoError.swift */,
 			);
 			path = LogoCompiler;
 			sourceTree = "<group>";
@@ -198,9 +210,9 @@
 		8BB49292230A54F70045C41F /* LogoCompilerTests */ = {
 			isa = PBXGroup;
 			children = (
-				8BB49293230A54F70045C41F /* LogoCompilerTests.swift */,
 				8BB49295230A54F70045C41F /* Info.plist */,
 				8BB492A4230A55550045C41F /* SimpleLexerTests.swift */,
+				8BB49293230A54F70045C41F /* SimpleCalculatorTests.swift */,
 			);
 			path = LogoCompilerTests;
 			sourceTree = "<group>";
@@ -443,8 +455,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB492A9230A569B0045C41F /* Token.swift in Sources */,
+				8BF7500F230B833500632F35 /* ASTNode.swift in Sources */,
 				8BB492AD230A85230045C41F /* Character+Extension.swift in Sources */,
 				8BB492AB230A56B90045C41F /* TokenType.swift in Sources */,
+				8BF75011230B83D200632F35 /* ASTNodeType.swift in Sources */,
+				8BF7500D230B82BF00632F35 /* SimpleCalculator.swift in Sources */,
+				8BF75013230B8AE700632F35 /* LogoError.swift in Sources */,
 				8BB492A7230A566E0045C41F /* TokenReader.swift in Sources */,
 				8BB492A3230A553D0045C41F /* SimpleLexer.swift in Sources */,
 			);
@@ -455,7 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB492A5230A55550045C41F /* SimpleLexerTests.swift in Sources */,
-				8BB49294230A54F70045C41F /* LogoCompilerTests.swift in Sources */,
+				8BB49294230A54F70045C41F /* SimpleCalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
