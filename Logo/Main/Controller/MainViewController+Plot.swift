@@ -9,6 +9,12 @@
 import UIKit
 
 extension MainViewController {
+    var panelBounds: CGRect {
+        get {
+            return self.panelView.bounds
+        }
+    }
+    
     var panelWidth: CGFloat {
         get {
             return self.panelView.bounds.width
@@ -62,19 +68,13 @@ extension MainViewController {
     func addLine(_ startPosition: CGPoint, endPosition: CGPoint) {
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = UIColor.green.cgColor
-        
-        shapeLayer.frame = CGRect(x: min(startPosition.x, endPosition.x), y: min(startPosition.y, endPosition.y), width: abs(startPosition.x-endPosition.x+2), height: abs( startPosition.y-endPosition.y))
+        shapeLayer.frame = self.panelBounds
         shapeLayer.lineWidth = 2.0
         shapeLayer.fillColor = UIColor.blue.cgColor
         
         let openSquarePath = UIBezierPath()
-        if startPosition.x < endPosition.x {
-            openSquarePath.move(to: .zero)
-            openSquarePath.addLine(to: CGPoint(x: endPosition.x-startPosition.x, y: endPosition.y-startPosition.y))
-        } else {
-            openSquarePath.move(to: CGPoint(x: startPosition.x-endPosition.x, y: 0))
-            openSquarePath.addLine(to: CGPoint(x: 0, y: endPosition.y-startPosition.y))
-        }
+        openSquarePath.move(to: startPosition)
+        openSquarePath.addLine(to: endPosition)
         
         shapeLayer.path = openSquarePath.cgPath
         panelView.layer.addSublayer(shapeLayer)

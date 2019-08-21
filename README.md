@@ -16,7 +16,7 @@ Logo Programming Language for iOS
 
 Weblog: [http://2019.iosdevlog.com/](https://2019.iosdevlog.com/)
 
-微信公众号: AI 开发日志
+微信公众号: AI开发日志
 
 ![AIDevLog](https://2019.iosdevlog.com/uploads/AIDevLog.png)
 

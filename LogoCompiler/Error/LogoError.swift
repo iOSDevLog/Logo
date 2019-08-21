@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum LogoError: Error {
+public enum LogoError: Error {
     case logo(error: String)
 }

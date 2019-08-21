@@ -12,6 +12,7 @@ import LogoCompiler
 class MainViewController: UIViewController {
     var lexer: SimpleLexer!
     var calculator: SimpleCalculator!
+    var parser: SimpleParser!
 
     // MARK: - Outlet
     @IBOutlet weak var editorTextView: UITextView!
@@ -23,6 +24,7 @@ class MainViewController: UIViewController {
 
         self.lexer = SimpleLexer()
         self.calculator = SimpleCalculator()
+        self.parser = SimpleParser()
 
         editorTextView.text = """
 1+2-3+4*5-6;
@@ -90,6 +92,29 @@ int result = a+b*c;
         }
     }
     
+    @IBAction func parse(_ sender: UIBarButtonItem) {
+        let script = editorTextView.text!
+        DispatchQueue.global().async { [weak self] in
+            self?.parser.evaluate(code: script)
+            var dataSource = [[String]]()
+            
+            if let asts = self?.parser.asts  {
+                dataSource.append(asts)
+                DispatchQueue.main.async {
+                    self?.performSegue(withIdentifier: "calculatorSegue", sender: dataSource)
+                    if let tree = self?.parser.tree {
+                        if let sublayers = self?.panelView.layer.sublayers {
+                            for layer in  sublayers {
+                                layer.removeFromSuperlayer()
+                            }
+                        }
+                        self?.dumpAST(node: tree, position: CGPoint(x: self!.panelWidth/CGFloat(2), y: CGFloat(44)))
+                    }
+                }
+            }
+        }
+    }
+    
     func dumpAST(node: ASTNode, position: CGPoint) {
         let childCount = node.getChildren().count
         let alpha: CGFloat = childCount > 0 ? 0.3 : 1
@@ -97,7 +122,7 @@ int result = a+b*c;
         
         for index in 0..<childCount {
             let child = node.getChildren()[index]
-            let maxWidth: CGFloat = 200
+            let maxWidth: CGFloat = CGFloat(100 * childCount)
             let halfWidth: CGFloat = maxWidth / 2
             let offset: CGFloat = (maxWidth/CGFloat(childCount+1)) * CGFloat(index+1) - halfWidth
             let newPosition = CGPoint(x: position.x + offset, y: position.y + 50)

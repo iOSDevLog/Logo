@@ -38,9 +38,9 @@
                                             <action selector="lexer:" destination="BYZ-38-t0r" id="kZ6-Af-vuw"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Clear" id="4bM-nP-YGH">
+                                    <barButtonItem title="Calculator" id="egW-Ch-j8y">
                                         <connections>
-                                            <action selector="clear:" destination="BYZ-38-t0r" id="h1P-ef-9gH"/>
+                                            <action selector="calculator:" destination="BYZ-38-t0r" id="KFl-a1-AIx"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="9PH-gX-3QJ">
@@ -48,9 +48,19 @@
                                             <action selector="lexer:" destination="BYZ-38-t0r" id="Jyz-4b-0Vz"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Calculator" id="egW-Ch-j8y">
+                                    <barButtonItem title="Parse" id="2Wf-fr-H0W">
                                         <connections>
-                                            <action selector="calculator:" destination="BYZ-38-t0r" id="KFl-a1-AIx"/>
+                                            <action selector="parse:" destination="BYZ-38-t0r" id="vjn-uz-82T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Lu6-pf-ZJ0">
+                                        <connections>
+                                            <action selector="lexer:" destination="BYZ-38-t0r" id="yJt-pY-JZX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Clear" id="4bM-nP-YGH">
+                                        <connections>
+                                            <action selector="clear:" destination="BYZ-38-t0r" id="h1P-ef-9gH"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
