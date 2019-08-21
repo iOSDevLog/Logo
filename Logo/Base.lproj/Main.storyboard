@@ -65,22 +65,35 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvb-NV-Zeg">
-                                <rect key="frame" x="0.0" y="387.5" width="414" height="425.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPe-R4-Xqr">
+                                <rect key="frame" x="0.0" y="386.5" width="414" height="426.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvb-NV-Zeg">
+                                        <rect key="frame" x="0.0" y="0.0" width="1656" height="896"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fvb-NV-Zeg" secondAttribute="trailing" id="OYf-Mc-vmE"/>
+                                    <constraint firstItem="fvb-NV-Zeg" firstAttribute="leading" secondItem="KPe-R4-Xqr" secondAttribute="leading" id="PXv-wv-l3E"/>
+                                    <constraint firstAttribute="bottom" secondItem="fvb-NV-Zeg" secondAttribute="bottom" id="Ubj-dt-3MY"/>
+                                    <constraint firstItem="fvb-NV-Zeg" firstAttribute="top" secondItem="KPe-R4-Xqr" secondAttribute="top" id="rb1-Vh-ZMI"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="KPe-R4-Xqr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dwk-yw-cV4"/>
                             <constraint firstItem="cur-wc-OnR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hai-HM-ocB"/>
-                            <constraint firstItem="TLb-QW-rBI" firstAttribute="top" secondItem="fvb-NV-Zeg" secondAttribute="bottom" id="Nyr-mZ-VfG"/>
                             <constraint firstItem="TLb-QW-rBI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q8v-cH-yNb"/>
                             <constraint firstItem="cur-wc-OnR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rb4-Jj-YJu"/>
                             <constraint firstItem="cur-wc-OnR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:3" id="SO1-6F-EfG"/>
+                            <constraint firstItem="KPe-R4-Xqr" firstAttribute="top" secondItem="cur-wc-OnR" secondAttribute="bottom" id="Vav-Wz-Cxl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TLb-QW-rBI" secondAttribute="bottom" id="WWc-mQ-R1i"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fvb-NV-Zeg" secondAttribute="trailing" id="dEm-uT-2Ji"/>
-                            <constraint firstItem="fvb-NV-Zeg" firstAttribute="top" secondItem="cur-wc-OnR" secondAttribute="bottom" constant="1" id="gIz-sG-TvA"/>
-                            <constraint firstItem="fvb-NV-Zeg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="urE-oe-b8s"/>
+                            <constraint firstItem="TLb-QW-rBI" firstAttribute="top" secondItem="KPe-R4-Xqr" secondAttribute="bottom" id="aop-lX-d3x"/>
+                            <constraint firstItem="fvb-NV-Zeg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="d1t-IZ-9YP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KPe-R4-Xqr" secondAttribute="trailing" id="ihk-XS-hy0"/>
+                            <constraint firstItem="fvb-NV-Zeg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="4:1" id="u68-Z4-CZP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cur-wc-OnR" secondAttribute="trailing" id="xmL-Do-Wwn"/>
                             <constraint firstItem="TLb-QW-rBI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xo8-EC-GER"/>
                         </constraints>
@@ -89,6 +102,7 @@
                     <navigationItem key="navigationItem" title="Logo" id="cMt-eY-1Ig"/>
                     <connections>
                         <outlet property="editorTextView" destination="cur-wc-OnR" id="pSX-Lk-0zF"/>
+                        <outlet property="panelScrollView" destination="KPe-R4-Xqr" id="DZT-Np-TJc"/>
                         <outlet property="panelView" destination="fvb-NV-Zeg" id="KkB-VS-93a"/>
                         <segue destination="Qt0-14-ydp" kind="show" identifier="lexerSegue" id="6yX-Wb-ZVK"/>
                         <segue destination="ruJ-fI-QxX" kind="show" identifier="calculatorSegue" id="JAV-oj-lma"/>
@@ -96,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="-536"/>
+            <point key="canvasLocation" x="1028.985507246377" y="-536.38392857142856"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="AlK-aV-wWc">

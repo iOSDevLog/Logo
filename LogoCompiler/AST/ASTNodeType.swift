@@ -25,4 +25,27 @@ public enum ASTNodeType {
 
     Identifier, // 标识符
     IntLiteral // 整型字面量
+
+    public var color: UIColor {
+        switch self {
+        case .Programm:
+            return UIColor.black
+        case .IntDeclaration:
+            return UIColor.blue
+        case .ExpressionStmt:
+            return UIColor.green
+        case .AssignmentStmt:
+            return UIColor.gray
+        case .Primary:
+            return UIColor.red
+        case .Multiplicative:
+            return UIColor.purple
+        case .Additive:
+            return UIColor.brown
+        case .Identifier:
+            return UIColor.yellow
+        case .IntLiteral:
+            return UIColor.cyan
+        }
+    }
 }

@@ -45,10 +45,10 @@ extension MainViewController {
         }
     }
     
-    func addNode(_ position: CGPoint, text: String? = nil, radius: CGFloat = 20, alpha: CGFloat = 0.5) {
+    func addNode(_ position: CGPoint, text: String? = nil, color: UIColor = UIColor.red, radius: CGFloat = 20) {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = UIBezierPath(roundedRect: CGRect(x: position.x - radius, y: position.y - radius, width: radius * 2, height: radius * 2), cornerRadius: radius).cgPath
-        shapeLayer.fillColor = UIColor(red: 1, green: 0, blue: 0, alpha: alpha).cgColor
+        shapeLayer.fillColor = color.cgColor
         panelView.layer.addSublayer(shapeLayer)
         
         if let text = text {
