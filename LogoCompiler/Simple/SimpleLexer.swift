@@ -152,6 +152,7 @@ public class SimpleLexer {
             switch state {
             case .Initial:
                 state = initToken(ch: ch) // 重新确定后续状态
+                break
             case .If:
                 state = initToken(ch: ch); // 退出当前状态，并保存Token
                 break
@@ -199,6 +200,7 @@ public class SimpleLexer {
                 } else {
                     state = initToken(ch: ch)
                 }
+                break
             case .Id_int3:
                 if isBlank(ch: ch) {
                     token?.type = .Int
@@ -207,12 +209,14 @@ public class SimpleLexer {
                     state = .Id
                     tokenText?.append(ch)
                 }
+                break
             case .Id:
                 if isAlpha(ch: ch) || isDigit(ch: ch) {
                     tokenText?.append(ch) // 保持标识符状态
                 } else {
                     state = initToken(ch: ch) // 退出标识符状态，并保存 Token
                 }
+                break
             case .GT:
                 if String(ch) == "=" {
                     token?.type = .GE // 转换成 GE
@@ -221,6 +225,7 @@ public class SimpleLexer {
                 } else {
                     state = initToken(ch: ch) // 退出 GT 状态，并保存 Token
                 }
+                break
             case .GE:
                 state = initToken(ch: ch) // 退出 GE 状态，并保存 Token
                 break
@@ -243,15 +248,18 @@ public class SimpleLexer {
                 state = initToken(ch: ch) // 退出 SemiColon 状态，并保存 Token
                 break
             case .LeftParen:
+                state = initToken(ch: ch) // 退出当前状态，并保存Token
                 break
             case .RightParen:
                 state = initToken(ch: ch) // 退出当前状态，并保存Token
+                break
             case .IntLiteral:
                 if isDigit(ch: ch) {
                     tokenText?.append(ch) // 继续保持在数字字面量状态
                 } else {
                     state = initToken(ch: ch) // 退出当前状态，并保存Token
                 }
+                break
             }
         }
 

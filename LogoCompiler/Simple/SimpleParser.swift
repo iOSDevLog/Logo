@@ -255,18 +255,19 @@ public class SimpleParser {
         var node: SimpleASTNode? = nil
         var token = tokens.peek()
 
-        if let _token = token {
-            if _token.getType() == .IntLiteral {
+        if token != nil {
+            if token!.getType() == .IntLiteral {
                 token = tokens.read()
                 node = SimpleASTNode(nodeType: .IntLiteral, text: token?.getText())
-            } else if token?.getType() == .Identifier {
+            } else if token!.getType() == .Identifier {
                 token = tokens.read()
                 node = SimpleASTNode(nodeType: .Identifier, text: token?.getText())
-            } else if token?.getType() == .LeftParen {
+            } else if token!.getType() == .LeftParen {
                 let _ = tokens.read()
                 node = try additive(tokens: tokens)
 
                 if node != nil {
+                    token = tokens.peek()
                     if token?.getType() == .RightParen {
                         let _ = tokens.read()
                     } else {
