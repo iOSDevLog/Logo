@@ -19,6 +19,7 @@ import Foundation
 public class SimpleCalculator {
     public var asts = [String]()
     public var evaluates = [String]()
+    public var tree: ASTNode?
     
     public init() {
         
@@ -34,6 +35,7 @@ public class SimpleCalculator {
         
         do {
             if let tree = try parse(code: script) {
+                self.tree = tree
                 dumpAST(node: tree, indent: "")
                 _ = evaluate(node: tree, indent: "")
             }

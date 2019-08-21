@@ -15,7 +15,8 @@ class MainViewController: UIViewController {
 
     // MARK: - Outlet
     @IBOutlet weak var editorTextView: UITextView!
-
+    @IBOutlet weak var panelView: UIView!
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class MainViewController: UIViewController {
         self.calculator = SimpleCalculator()
 
         editorTextView.text = """
-3+4*5;
+1+2-3+4*5-6;
 
 int a = 15;
 int b = 19;
@@ -76,8 +77,32 @@ int result = a+b*c;
                 dataSource.append(evaluates)
                 DispatchQueue.main.async {
                     self?.performSegue(withIdentifier: "calculatorSegue", sender: dataSource)
+                    if let tree = self?.calculator.tree {
+                        if let sublayers = self?.panelView.layer.sublayers {
+                            for layer in  sublayers {
+                                layer.removeFromSuperlayer()
+                            }
+                        }
+                        self?.dumpAST(node: tree, position: CGPoint(x: self!.panelWidth/CGFloat(2), y: CGFloat(44)))
+                    }
                 }
             }
+        }
+    }
+    
+    func dumpAST(node: ASTNode, position: CGPoint) {
+        let childCount = node.getChildren().count
+        let alpha: CGFloat = childCount > 0 ? 0.3 : 1
+        self.addNode(position, text: node.getText(), alpha: alpha)
+        
+        for index in 0..<childCount {
+            let child = node.getChildren()[index]
+            let maxWidth: CGFloat = 200
+            let halfWidth: CGFloat = maxWidth / 2
+            let offset: CGFloat = (maxWidth/CGFloat(childCount+1)) * CGFloat(index+1) - halfWidth
+            let newPosition = CGPoint(x: position.x + offset, y: position.y + 50)
+            self.addLine(position, endPosition: newPosition)
+            dumpAST(node: child, position: newPosition);
         }
     }
     

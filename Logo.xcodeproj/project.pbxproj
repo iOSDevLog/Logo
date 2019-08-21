@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B082EDD230CD76100C4B7FE /* MainViewController+Plot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B082EDC230CD76100C4B7FE /* MainViewController+Plot.swift */; };
+		8B082EDF230CDD2D00C4B7FE /* String+FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B082EDE230CDD2D00C4B7FE /* String+FontSize.swift */; };
+		8B082EE1230CDD4D00C4B7FE /* DynamicTextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B082EE0230CDD4D00C4B7FE /* DynamicTextLayer.swift */; };
 		8BB49260230A54800045C41F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4925F230A54800045C41F /* AppDelegate.swift */; };
 		8BB49262230A54800045C41F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB49261230A54800045C41F /* MainViewController.swift */; };
 		8BB49265230A54800045C41F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB49263230A54800045C41F /* Main.storyboard */; };
@@ -80,6 +83,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B082EDC230CD76100C4B7FE /* MainViewController+Plot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Plot.swift"; sourceTree = "<group>"; };
+		8B082EDE230CDD2D00C4B7FE /* String+FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FontSize.swift"; sourceTree = "<group>"; };
+		8B082EE0230CDD4D00C4B7FE /* DynamicTextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextLayer.swift; sourceTree = "<group>"; };
 		8BB4925C230A54800045C41F /* Logo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB4925F230A54800045C41F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB49261230A54800045C41F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +103,9 @@
 		8BB49295230A54F70045C41F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB492A2230A553D0045C41F /* SimpleLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLexer.swift; sourceTree = "<group>"; };
 		8BB492A4230A55550045C41F /* SimpleLexerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLexerTests.swift; sourceTree = "<group>"; };
-		8BB492A6230A566E0045C41F /* TokenReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenReader.swift; sourceTree = "<group>"; };
-		8BB492A8230A569B0045C41F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		8BB492AA230A56B90045C41F /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
+		8BB492A6230A566E0045C41F /* TokenReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TokenReader.swift; path = ../TokenReader.swift; sourceTree = "<group>"; };
+		8BB492A8230A569B0045C41F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Token.swift; path = ../Token.swift; sourceTree = "<group>"; };
+		8BB492AA230A56B90045C41F /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TokenType.swift; path = ../TokenType.swift; sourceTree = "<group>"; };
 		8BB492AC230A85230045C41F /* Character+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Extension.swift"; sourceTree = "<group>"; };
 		8BB492AE230AA7470045C41F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BB492B3230AA9CD0045C41F /* LexerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexerViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B082ED4230BFAC600C4B7FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B082EE0230CDD4D00C4B7FE /* DynamicTextLayer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B082ED7230CD60600C4B7FE /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				8BB492A6230A566E0045C41F /* TokenReader.swift */,
+				8BB492A8230A569B0045C41F /* Token.swift */,
+				8BB492AA230A56B90045C41F /* TokenType.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		8B082ED8230CD65500C4B7FE /* AST */ = {
+			isa = PBXGroup;
+			children = (
+				8BF7500E230B833500632F35 /* ASTNode.swift */,
+				8BF75010230B83D200632F35 /* ASTNodeType.swift */,
+			);
+			path = AST;
+			sourceTree = "<group>";
+		};
+		8B082ED9230CD66100C4B7FE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8BB492AC230A85230045C41F /* Character+Extension.swift */,
+				8B082EDE230CDD2D00C4B7FE /* String+FontSize.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8B082EDA230CD66E00C4B7FE /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				8BB492A2230A553D0045C41F /* SimpleLexer.swift */,
+				8BF7500C230B82BF00632F35 /* SimpleCalculator.swift */,
+			);
+			path = Simple;
+			sourceTree = "<group>";
+		};
+		8B082EDB230CD67C00C4B7FE /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				8BF75012230B8AE700632F35 /* LogoError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		8BB49253230A54800045C41F = {
 			isa = PBXGroup;
 			children = (
@@ -197,15 +256,11 @@
 			children = (
 				8BB49286230A54F60045C41F /* LogoCompiler.h */,
 				8BB49287230A54F60045C41F /* Info.plist */,
-				8BB492A2230A553D0045C41F /* SimpleLexer.swift */,
-				8BB492A6230A566E0045C41F /* TokenReader.swift */,
-				8BB492A8230A569B0045C41F /* Token.swift */,
-				8BB492AA230A56B90045C41F /* TokenType.swift */,
-				8BB492AC230A85230045C41F /* Character+Extension.swift */,
-				8BF7500C230B82BF00632F35 /* SimpleCalculator.swift */,
-				8BF7500E230B833500632F35 /* ASTNode.swift */,
-				8BF75010230B83D200632F35 /* ASTNodeType.swift */,
-				8BF75012230B8AE700632F35 /* LogoError.swift */,
+				8B082ED7230CD60600C4B7FE /* Token */,
+				8B082ED9230CD66100C4B7FE /* Extension */,
+				8B082ED8230CD65500C4B7FE /* AST */,
+				8B082EDA230CD66E00C4B7FE /* Simple */,
+				8B082EDB230CD67C00C4B7FE /* Error */,
 			);
 			path = LogoCompiler;
 			sourceTree = "<group>";
@@ -249,6 +304,7 @@
 		8BB492BB230AB4780045C41F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8B082ED4230BFAC600C4B7FE /* View */,
 				8BB492BC230AB47E0045C41F /* Controller */,
 			);
 			path = Main;
@@ -258,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				8BB49261230A54800045C41F /* MainViewController.swift */,
+				8B082EDC230CD76100C4B7FE /* MainViewController+Plot.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -453,6 +510,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B082EE1230CDD4D00C4B7FE /* DynamicTextLayer.swift in Sources */,
+				8B082EDD230CD76100C4B7FE /* MainViewController+Plot.swift in Sources */,
 				8BB49262230A54800045C41F /* MainViewController.swift in Sources */,
 				8BB49260230A54800045C41F /* AppDelegate.swift in Sources */,
 				8BB492B8230AAB820045C41F /* Lexer.swift in Sources */,
@@ -480,6 +539,7 @@
 				8BB492AB230A56B90045C41F /* TokenType.swift in Sources */,
 				8BF75011230B83D200632F35 /* ASTNodeType.swift in Sources */,
 				8BF7500D230B82BF00632F35 /* SimpleCalculator.swift in Sources */,
+				8B082EDF230CDD2D00C4B7FE /* String+FontSize.swift in Sources */,
 				8BF75013230B8AE700632F35 /* LogoError.swift in Sources */,
 				8BB492A7230A566E0045C41F /* TokenReader.swift in Sources */,
 				8BB492A3230A553D0045C41F /* SimpleLexer.swift in Sources */,

@@ -6,7 +6,7 @@ Logo Programming Language for iOS
 
 ## Screenshot
 
-![editor](screenshot/editor.png)
+![ast](screenshot/ast.png)
 
 ![token](screenshot/token.png)
 
