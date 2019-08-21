@@ -222,17 +222,17 @@ public class SimpleParser {
         var child1: SimpleASTNode? = try primary(tokens: tokens)
         var node = child1
         
-        if let _child1 = child1 {
+        if child1 != nil {
             while true {
                 var token = tokens.peek()
                 if token?.getType() == .Star || token?.getType() == .Slash {
                     token = tokens.read()
                     let child2 = try primary(tokens: tokens)
                     
-                    if let _child2 = child2 {
+                    if child2 != nil {
                         node = SimpleASTNode(nodeType: .Multiplicative, text: token?.getText())
-                        node?.add(child: _child1)
-                        node?.add(child: _child2)
+                        node?.add(child: child1!)
+                        node?.add(child: child2!)
                         child1 = node
                     } else {
                         throw LogoError.logo(error: "invalid multiplicative expression, expecting the right part.")
@@ -266,7 +266,7 @@ public class SimpleParser {
                 let _ = tokens.read()
                 node = try additive(tokens: tokens)
 
-                if let _ = node {
+                if node != nil {
                     if token?.getType() == .RightParen {
                         let _ = tokens.read()
                     } else {
