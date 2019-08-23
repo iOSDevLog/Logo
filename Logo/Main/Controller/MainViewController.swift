@@ -34,6 +34,8 @@ int b = 19;
 int c = 1519;
 int result = a+b*c;
 """
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap))
+        self.panelView.addGestureRecognizer(tap)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -121,6 +123,15 @@ int result = a+b*c;
         }
     }
 
+    @IBAction func clear(_ sender: UIBarButtonItem) {
+        editorTextView.text = ""
+    }
+
+    // MARK: - Helper
+    @objc func tap() {
+        self.editorTextView.resignFirstResponder()
+    }
+
     func dumpAST(node: ASTNode, position: CGPoint, level: Int = 1) {
         let childCount = node.getChildren().count
         let alpha: CGFloat = childCount > 0 ? 0.1 : 1
@@ -140,10 +151,7 @@ int result = a+b*c;
         }
     }
 
-    @IBAction func clear(_ sender: UIBarButtonItem) {
-        editorTextView.text = ""
-    }
-
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "lexerSegue" {
             let lexerViewController = segue.destination as! LexerViewController
