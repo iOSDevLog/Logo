@@ -13,6 +13,8 @@
 		8B082EE3230CF7DF00C4B7FE /* SimpleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B082EE2230CF7DF00C4B7FE /* SimpleParser.swift */; };
 		8B082EE5230CF94A00C4B7FE /* SimpleASTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B082EE4230CF94A00C4B7FE /* SimpleASTNode.swift */; };
 		8B082EE7230D165000C4B7FE /* SimpleParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B082EE6230D165000C4B7FE /* SimpleParserTests.swift */; };
+		8B7057C0230FE6E8007D26C8 /* SimpleScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7057BF230FE6E7007D26C8 /* SimpleScript.swift */; };
+		8B7057C2230FF249007D26C8 /* SimpleScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7057C1230FF249007D26C8 /* SimpleScriptTests.swift */; };
 		8BB49260230A54800045C41F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4925F230A54800045C41F /* AppDelegate.swift */; };
 		8BB49262230A54800045C41F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB49261230A54800045C41F /* MainViewController.swift */; };
 		8BB49265230A54800045C41F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB49263230A54800045C41F /* Main.storyboard */; };
@@ -92,6 +94,8 @@
 		8B082EE2230CF7DF00C4B7FE /* SimpleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleParser.swift; sourceTree = "<group>"; };
 		8B082EE4230CF94A00C4B7FE /* SimpleASTNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleASTNode.swift; sourceTree = "<group>"; };
 		8B082EE6230D165000C4B7FE /* SimpleParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleParserTests.swift; sourceTree = "<group>"; };
+		8B7057BF230FE6E7007D26C8 /* SimpleScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleScript.swift; sourceTree = "<group>"; };
+		8B7057C1230FF249007D26C8 /* SimpleScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleScriptTests.swift; sourceTree = "<group>"; };
 		8BB4925C230A54800045C41F /* Logo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB4925F230A54800045C41F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB49261230A54800045C41F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -197,10 +201,11 @@
 		8B082EDA230CD66E00C4B7FE /* Simple */ = {
 			isa = PBXGroup;
 			children = (
+				8B082EE4230CF94A00C4B7FE /* SimpleASTNode.swift */,
 				8BB492A2230A553D0045C41F /* SimpleLexer.swift */,
 				8BF7500C230B82BF00632F35 /* SimpleCalculator.swift */,
 				8B082EE2230CF7DF00C4B7FE /* SimpleParser.swift */,
-				8B082EE4230CF94A00C4B7FE /* SimpleASTNode.swift */,
+				8B7057BF230FE6E7007D26C8 /* SimpleScript.swift */,
 			);
 			path = Simple;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				8BB492A4230A55550045C41F /* SimpleLexerTests.swift */,
 				8BB49293230A54F70045C41F /* SimpleCalculatorTests.swift */,
 				8B082EE6230D165000C4B7FE /* SimpleParserTests.swift */,
+				8B7057C1230FF249007D26C8 /* SimpleScriptTests.swift */,
 			);
 			path = LogoCompilerTests;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				8BB492A9230A569B0045C41F /* Token.swift in Sources */,
 				8BF7500F230B833500632F35 /* ASTNode.swift in Sources */,
 				8BB492AD230A85230045C41F /* Character+Extension.swift in Sources */,
+				8B7057C0230FE6E8007D26C8 /* SimpleScript.swift in Sources */,
 				8BB492AB230A56B90045C41F /* TokenType.swift in Sources */,
 				8BF75011230B83D200632F35 /* ASTNodeType.swift in Sources */,
 				8BF7500D230B82BF00632F35 /* SimpleCalculator.swift in Sources */,
@@ -561,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7057C2230FF249007D26C8 /* SimpleScriptTests.swift in Sources */,
 				8BB492A5230A55550045C41F /* SimpleLexerTests.swift in Sources */,
 				8B082EE7230D165000C4B7FE /* SimpleParserTests.swift in Sources */,
 				8BB49294230A54F70045C41F /* SimpleCalculatorTests.swift in Sources */,
