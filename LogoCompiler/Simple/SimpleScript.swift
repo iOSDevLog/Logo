@@ -93,7 +93,7 @@ public class SimpleScript  {
             case .Identifier:
                 let varName = node.getText()!
                 if variables.keys.contains(varName) {
-                    let value = Int(varName)
+                    let value = variables[varName]
                     
                     if value != nil {
                         result = value!
