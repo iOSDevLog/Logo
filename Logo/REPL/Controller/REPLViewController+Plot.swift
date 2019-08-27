@@ -1,14 +1,14 @@
 //
-//  MainViewController+Plot.swift
+//  REPLViewController+Plot.swift
 //  Logo
 //
-//  Created by developer on 8/21/19.
+//  Created by developer on 8/27/19.
 //  Copyright © 2019 iOSDevLog. All rights reserved.
 //
 
 import UIKit
 
-extension MainViewController {
+extension REPLViewController {
     var panelBounds: CGRect {
         get {
             return self.panelView.bounds
@@ -80,3 +80,4 @@ extension MainViewController {
         panelView.layer.addSublayer(shapeLayer)
     }
 }
+

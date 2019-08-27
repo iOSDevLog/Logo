@@ -39,7 +39,7 @@ public class SimpleParser {
      * @return
      * @throws Exception
      */
-    func parse(code: String) throws -> ASTNode? {
+    public func parse(code: String) throws -> ASTNode? {
         let lexer = SimpleLexer()
         let tokens = lexer.tokenize(code: code)
 
@@ -54,7 +54,7 @@ public class SimpleParser {
      * @throws Exception
      */
     private func prog(tokens: TokenReader) throws -> SimpleASTNode? {
-        let node = SimpleASTNode(nodeType: .Programm, text: "pwc")
+        let node = SimpleASTNode(nodeType: .Programm, text: "AST")
 
         while tokens.peek() != nil {
             var child = try intDeclare(tokens: tokens)
@@ -198,7 +198,7 @@ public class SimpleParser {
                     let child2 = try multiplicative(tokens: tokens) // 计算下级节点
                     if child2 != nil {
                         node = SimpleASTNode(nodeType: .Additive, text: token?.getText())
-                        node?.add(child: child1!)  // 注意，新节点在顶层，保证正确的结合性
+                        node?.add(child: child1!) // 注意，新节点在顶层，保证正确的结合性
                         node?.add(child: child2!)
                         child1 = node
                     } else {
@@ -221,14 +221,14 @@ public class SimpleParser {
     private func multiplicative(tokens: TokenReader) throws -> SimpleASTNode? {
         var child1: SimpleASTNode? = try primary(tokens: tokens)
         var node = child1
-        
+
         if child1 != nil {
             while true {
                 var token = tokens.peek()
                 if token?.getType() == .Star || token?.getType() == .Slash {
                     token = tokens.read()
                     let child2 = try primary(tokens: tokens)
-                    
+
                     if child2 != nil {
                         node = SimpleASTNode(nodeType: .Multiplicative, text: token?.getText())
                         node?.add(child: child1!)
@@ -287,7 +287,7 @@ public class SimpleParser {
      * @param node
      * @param indent 缩进字符，由tab组成，每一级多一个tab
      */
-    func dumpAST(node: ASTNode, indent: String) {
+    public func dumpAST(node: ASTNode, indent: String) {
         let str = "\(indent)\(String(describing: node.getType()!)) \(String(describing: node.getText()!))"
         print(str)
         asts.append(str)

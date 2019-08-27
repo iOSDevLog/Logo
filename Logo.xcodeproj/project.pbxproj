@@ -35,6 +35,11 @@
 		8BB492B4230AA9CD0045C41F /* LexerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB492B3230AA9CD0045C41F /* LexerViewController.swift */; };
 		8BB492B8230AAB820045C41F /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB492B7230AAB820045C41F /* Lexer.swift */; };
 		8BB492BA230AABAF0045C41F /* LexerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB492B9230AABAF0045C41F /* LexerItem.swift */; };
+		8BB4A26B231518E90038F188 /* REPLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4A26A231518E90038F188 /* REPLViewController.swift */; };
+		8BB4A26D23151FFB0038F188 /* REPLViewController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4A26C23151FFB0038F188 /* REPLViewController+TableViewDataSource.swift */; };
+		8BB4A2712315207F0038F188 /* Cmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4A2702315207F0038F188 /* Cmd.swift */; };
+		8BB4A27523152BAF0038F188 /* REPLViewController+Plot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4A27423152BAF0038F188 /* REPLViewController+Plot.swift */; };
+		8BB4A2772315392D0038F188 /* REPLViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4A2762315392D0038F188 /* REPLViewController+TableViewDelegate.swift */; };
 		8BF7500D230B82BF00632F35 /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7500C230B82BF00632F35 /* SimpleCalculator.swift */; };
 		8BF7500F230B833500632F35 /* ASTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7500E230B833500632F35 /* ASTNode.swift */; };
 		8BF75011230B83D200632F35 /* ASTNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF75010230B83D200632F35 /* ASTNodeType.swift */; };
@@ -121,6 +126,11 @@
 		8BB492B3230AA9CD0045C41F /* LexerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexerViewController.swift; sourceTree = "<group>"; };
 		8BB492B7230AAB820045C41F /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		8BB492B9230AABAF0045C41F /* LexerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexerItem.swift; sourceTree = "<group>"; };
+		8BB4A26A231518E90038F188 /* REPLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REPLViewController.swift; sourceTree = "<group>"; };
+		8BB4A26C23151FFB0038F188 /* REPLViewController+TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "REPLViewController+TableViewDataSource.swift"; sourceTree = "<group>"; };
+		8BB4A2702315207F0038F188 /* Cmd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cmd.swift; sourceTree = "<group>"; };
+		8BB4A27423152BAF0038F188 /* REPLViewController+Plot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "REPLViewController+Plot.swift"; sourceTree = "<group>"; };
+		8BB4A2762315392D0038F188 /* REPLViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "REPLViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		8BF7500C230B82BF00632F35 /* SimpleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculator.swift; sourceTree = "<group>"; };
 		8BF7500E230B833500632F35 /* ASTNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTNode.swift; sourceTree = "<group>"; };
 		8BF75010230B83D200632F35 /* ASTNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTNodeType.swift; sourceTree = "<group>"; };
@@ -243,6 +253,7 @@
 		8BB4925E230A54800045C41F /* Logo */ = {
 			isa = PBXGroup;
 			children = (
+				8BB4A268231517360038F188 /* REPL */,
 				8BF75014230BA36500632F35 /* Calculator */,
 				8BB492BB230AB4780045C41F /* Main */,
 				8BB492B2230AA9BB0045C41F /* Lexer */,
@@ -332,6 +343,34 @@
 				8B082EDC230CD76100C4B7FE /* MainViewController+Plot.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8BB4A268231517360038F188 /* REPL */ = {
+			isa = PBXGroup;
+			children = (
+				8BB4A26F231520660038F188 /* Model */,
+				8BB4A2692315174C0038F188 /* Controller */,
+			);
+			path = REPL;
+			sourceTree = "<group>";
+		};
+		8BB4A2692315174C0038F188 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8BB4A26A231518E90038F188 /* REPLViewController.swift */,
+				8BB4A26C23151FFB0038F188 /* REPLViewController+TableViewDataSource.swift */,
+				8BB4A2762315392D0038F188 /* REPLViewController+TableViewDelegate.swift */,
+				8BB4A27423152BAF0038F188 /* REPLViewController+Plot.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8BB4A26F231520660038F188 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BB4A2702315207F0038F188 /* Cmd.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8BF75014230BA36500632F35 /* Calculator */ = {
@@ -525,12 +564,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB4A2712315207F0038F188 /* Cmd.swift in Sources */,
 				8B082EE1230CDD4D00C4B7FE /* DynamicTextLayer.swift in Sources */,
 				8B082EDD230CD76100C4B7FE /* MainViewController+Plot.swift in Sources */,
 				8BB49262230A54800045C41F /* MainViewController.swift in Sources */,
 				8BB49260230A54800045C41F /* AppDelegate.swift in Sources */,
+				8BB4A26B231518E90038F188 /* REPLViewController.swift in Sources */,
 				8BB492B8230AAB820045C41F /* Lexer.swift in Sources */,
+				8BB4A26D23151FFB0038F188 /* REPLViewController+TableViewDataSource.swift in Sources */,
+				8BB4A27523152BAF0038F188 /* REPLViewController+Plot.swift in Sources */,
 				8BB492BA230AABAF0045C41F /* LexerItem.swift in Sources */,
+				8BB4A2772315392D0038F188 /* REPLViewController+TableViewDelegate.swift in Sources */,
 				8BF75017230BA3B500632F35 /* CalculatorViewController.swift in Sources */,
 				8BB492B4230AA9CD0045C41F /* LexerViewController.swift in Sources */,
 			);

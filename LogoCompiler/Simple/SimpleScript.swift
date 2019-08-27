@@ -25,19 +25,23 @@ import Foundation
  * 你还可以使用一个参数 -v，让每次执行脚本的时候，都输出AST和整个计算过程。
  *
  */
-public class SimpleScript  {
+public class SimpleScript {
     // MARK: - Property
     var variables = [String: Int?]()
-   public static var verbose = false
-    
+    public static var verbose = false
+
+    public init() {
+
+    }
+
     // MARK: - Helper
-    func evaluate(node: ASTNode, indent: String) throws -> Int? {
+    public func evaluate(node: ASTNode, indent: String) throws -> Int? {
         var result: Int? = nil
-        
-        if  SimpleScript.verbose {
+
+        if SimpleScript.verbose {
             print("\(indent)Calculating: \(String(describing: node.getType()!))")
         }
-        
+
         if let type = node.getType() {
             switch type {
             case .Programm:
@@ -46,17 +50,17 @@ public class SimpleScript  {
                 }
                 break
             case .ExpressionStmt:
-               break
+                break
             case .AssignmentStmt:
                 let varName = node.getText()!
                 if !variables.keys.contains(varName) {
                     throw LogoError.logo(error: "unknown variable: \(varName)")
                 } //接着执行下面的代码
-               fallthrough
+                fallthrough
             case .IntDeclaration:
                 let varName = node.getText()!
                 var varValue: Int? = nil
-                
+
                 if node.getChildren().count > 0 {
                     let child = node.getChildren()[0]
                     result = try evaluate(node: child, indent: "\t")
@@ -65,36 +69,36 @@ public class SimpleScript  {
                 variables[varName] = varValue
                 break
             case .Primary:
-               break
+                break
             case .Multiplicative:
                 let child1 = node.getChildren()[0]
                 let value1 = try evaluate(node: child1, indent: "\t")
                 let child2 = node.getChildren()[1]
                 let value2 = try evaluate(node: child2, indent: "\t")
-                
+
                 if node.getText()! == "*" {
                     result = value1! * value2!
                 } else {
                     result = value1! / value2!
                 }
-               break
+                break
             case .Additive:
                 let child1 = node.getChildren()[0]
                 let value1 = try evaluate(node: child1, indent: "\t")
                 let child2 = node.getChildren()[1]
                 let value2 = try evaluate(node: child2, indent: "\t")
-                
+
                 if node.getText()! == "+" {
                     result = value1! + value2!
                 } else {
                     result = value1! - value2!
                 }
-               break
+                break
             case .Identifier:
                 let varName = node.getText()!
                 if variables.keys.contains(varName) {
                     let value = variables[varName]
-                    
+
                     if value != nil {
                         result = value!
                     } else {
@@ -103,14 +107,14 @@ public class SimpleScript  {
                 } else {
                     throw LogoError.logo(error: "unknown variable: \(varName)")
                 }
-               break
+                break
             case .IntLiteral:
                 result = Int(node.getText()!)
-               break
+                break
             }
-            
+
             if SimpleScript.verbose {
-                print("\(indent)Result: \(String(describing: result ))")
+                print("\(indent)Result: \(String(describing: result))")
             } else if indent == "" { // 顶层的语句
                 if node.getType() == .IntDeclaration || node.getType() == .AssignmentStmt {
                     print("\(String(describing: node.getText())):  \(String(describing: result))")
@@ -119,7 +123,7 @@ public class SimpleScript  {
                 }
             }
         }
-        
+
         return result
     }
 }
